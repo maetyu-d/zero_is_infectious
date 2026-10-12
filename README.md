@@ -2,6 +2,18 @@
 
 A native C++17 strategy game about containing infectious zeros in a numerical world. Built from scratch using JUCE, with a warm Swiss-style interface and an independent game engine. There is no HTML, JavaScript, browser, or web view in the app.
 
+![Zero Is Infectious gameplay: a 9×9 numerical board with infection previews, six operations, and the turn forecast](assets/gameplay.png)
+
+*9×9 Strategy world, with next-pulse previews enabled.*
+
+## Rules at a glance
+
+- **Win:** preserve exactly one zero in the same cell for the final three turns, while keeping the minimum living population alive. “Living” means nonzero cells; zeros and removed cells do not count.
+- **Take a turn:** spend your available action points on the six operations, then choose **End turn**. Most operations cost one action; Sacrifice costs two. You can end a turn with actions unspent.
+- **Contain infection:** unanchored zeros reduce neighbouring values toward zero simultaneously. Three-zero lines and 2×2 colonies spread farther; negative values resist overlapping attacks. Anchor stops a zero spreading for three pulses, or two on Hard.
+- **Plan ahead:** board badges preview the next pulse. **After this turn** predicts the complete outcome, including geometry changes and survival checks. Scheduled weather changes values, tools can become corrupted, and larger boards can gain satellite zeros.
+- **Survive:** you lose if living cells fall below the minimum, the zero colony reaches its limit, or final containment fails. Optional geometry modes expand or contract the world; with zero-driven geometry, the final board cannot be more than one size step smaller than its starting size.
+
 ## Download
 
 [Download the macOS app — Apple Silicon](https://github.com/maetyu-d/zero_is_infectious/raw/refs/heads/main/dist/Zero-Is-Infectious-1.3-macOS-arm64.zip). Extract the ZIP and open **Zero Is Infectious.app**.
@@ -34,9 +46,9 @@ cmake --build build-tests
 ctest --test-dir build-tests --output-on-failure
 ```
 
-## Play
+## Controls
 
-Choose a board size (5, 7, 9, 11, or 13 cells per side), difficulty, and optional geometry modes in Setup. Keep enough nonzero cells alive and preserve exactly one zero on the same cell during the final three turns.
+Setup offers 5×5, 7×7, 9×9, 11×11, or 13×13 worlds, three difficulties, and optional geometry modes.
 
 | Key | Operation | Behaviour |
 | --- | --- | --- |
@@ -48,8 +60,6 @@ Choose a board size (5, 7, 9, 11, or 13 cells per side), difficulty, and optiona
 | 6 | Anchor | Temporarily stop a zero spreading. |
 
 Transfer, Exchange, and Sever use two cell selections. Enter ends the turn; Z undoes the last operation; Escape clears a selection; ? opens the rules. Arrow keys move the highlighted cell and Space operates on it.
-
-Unanchored zeros spread simultaneously. Lines and 2×2 colonies attack farther; negative values resist overlapping attacks. Arithmetic weather, corrupted tools, satellite zeros, and optional expansion/contraction make later turns harder. Preview badges show the next pulse, while **After this turn** includes geometry changes and survival checks.
 
 ## Interface
 
