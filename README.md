@@ -1,6 +1,6 @@
 # Zero Is Infectious
 
-A strategy game about containing an infection (the number zero) in a numerical world. Built in C++/JUCE.
+A strategy game about containing an infection (represented by the number zero) in a numerical world. Built in C++/JUCE.
 
 ![Zero Is Infectious gameplay: a 9×9 numerical board with infection previews, six operations, and the turn forecast](assets/gameplay.png)
 
