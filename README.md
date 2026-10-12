@@ -1,6 +1,6 @@
 # Zero Is Infectious
 
-A native C++17 strategy game about containing infectious zeros in a numerical world. Built from scratch using JUCE, with a warm Swiss-style interface and an independent game engine. There is no HTML, JavaScript, browser, or web view in the app.
+A strategy game about containing an infection (the number zero) in a numerical world. Built in C++/JUCE.
 
 ![Zero Is Infectious gameplay: a 9×9 numerical board with infection previews, six operations, and the turn forecast](assets/gameplay.png)
 
